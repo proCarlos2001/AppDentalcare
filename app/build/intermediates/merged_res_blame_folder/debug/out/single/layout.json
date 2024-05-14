@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "com.carlosdevs.dentalcare.app-mergeDebugResources-55:/layout/activity_login.xml",
+        "source": "com.carlosdevs.dentalcare.app-main-58:/layout/activity_login.xml"
+    },
+    {
+        "merged": "com.carlosdevs.dentalcare.app-mergeDebugResources-55:/layout/activity_main_start.xml",
+        "source": "com.carlosdevs.dentalcare.app-main-58:/layout/activity_main_start.xml"
+    },
+    {
+        "merged": "com.carlosdevs.dentalcare.app-mergeDebugResources-55:/layout/activity_home.xml",
+        "source": "com.carlosdevs.dentalcare.app-main-58:/layout/activity_home.xml"
+    },
+    {
+        "merged": "com.carlosdevs.dentalcare.app-mergeDebugResources-55:/layout/fragment_forget.xml",
+        "source": "com.carlosdevs.dentalcare.app-main-58:/layout/fragment_forget.xml"
+    },
+    {
+        "merged": "com.carlosdevs.dentalcare.app-mergeDebugResources-55:/layout/fragment_signup.xml",
+        "source": "com.carlosdevs.dentalcare.app-main-58:/layout/fragment_signup.xml"
+    },
+    {
+        "merged": "com.carlosdevs.dentalcare.app-mergeDebugResources-55:/layout/fragment_login.xml",
+        "source": "com.carlosdevs.dentalcare.app-main-58:/layout/fragment_login.xml"
+    }
+]

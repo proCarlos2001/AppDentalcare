@@ -1,0 +1,170 @@
+[
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\layout_fragment_signup.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\layout\\fragment_signup.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\layout_activity_home.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\layout\\activity_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_nav_cancelar_cita.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\nav_cancelar_cita.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_nav_pagos.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\nav_pagos.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-mdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\font_regular.otf.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\font\\regular.otf"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-hdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_nav_historial.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\nav_historial.xml"
+    },
+    {
+        "merged": "com.carlosdevs.dentalcare.app-merged_res-56:/navigation_nav_graph.xml.flat",
+        "source": "com.carlosdevs.dentalcare.app-main-58:/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_nav_user.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\nav_user.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\font_bold.otf.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\font\\bold.otf"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\layout_fragment_login.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\layout\\fragment_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_nav_especialistas.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\nav_especialistas.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\layout_activity_login.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_logo.png.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\logo.png"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\layout_activity_main_start.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\layout\\activity_main_start.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_nav_cita.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\nav_cita.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-xhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-xxxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_logo_grande.png.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\logo_grande.png"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\layout_fragment_forget.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\layout\\fragment_forget.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_nav_logout.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\nav_logout.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-xxhdpi\\ic_launcher_foreground.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\font_italic.otf.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\font\\italic.otf"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\drawable_nav_reportes.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\drawable\\nav_reportes.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-merged_res-56:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\daemon\\8.0\\com.carlosdevs.dentalcare.app-main-58:\\mipmap-xhdpi\\ic_launcher.webp"
+    }
+]

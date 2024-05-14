@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="http://schemas.android.com/tools">
+    <color name="black">#FF000000</color>
+    <color name="green">#009E0F</color>
+    <color name="ic_launcher_background">#FFFFFF</color>
+    <color name="orange">#FF9900</color>
+    <color name="red">#CC0000</color>
+    <color name="white">#FFFFFFFF</color>
+    <dimen name="big_margin">42dp</dimen>
+    <dimen name="card_elevation">6dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="medium_margin">26dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="text_size">18dp</dimen>
+    <string name="app_name">DentalCare</string>
+    <string name="email_label">Correo Electrónico</string>
+    <string name="female_label">Femenino</string>
+    <string name="forget_email_label">Ingrese su correo electrónico</string>
+    <string name="forget_fragment_text_button">Cambiar contraseña</string>
+    <string name="gcm_defaultSenderId" translatable="false">256806011606</string>
+    <string name="google_api_key" translatable="false">AIzaSyCnyvAMDmqRfXpt9tJhhpd0-6rsThq1sRo</string>
+    <string name="google_app_id" translatable="false">1:256806011606:android:737db0ba74381fd2957f77</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyCnyvAMDmqRfXpt9tJhhpd0-6rsThq1sRo</string>
+    <string name="google_storage_bucket" translatable="false">dentalcare-4ed27.appspot.com</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_text_gender">Seleccione su género</string>
+    <string name="label_text_password">¿Olvidaste la contraseña?</string>
+    <string name="login_fragment_text_button">Ingresar</string>
+    <string name="login_fragment_text_info">No tengo cuenta</string>
+    <string name="login_fragment_text_signup">¡Registrate ahora!</string>
+    <string name="male_label">Masculino</string>
+    <string name="name_label">Nombre Completo</string>
+    <string name="number_label">Número de teléfono</string>
+    <string name="password_label">Contraseña</string>
+    <string name="project_id" translatable="false">dentalcare-4ed27</string>
+    <string name="signup_fragment_text_button">Registrarse</string>
+    <string name="signup_fragment_text_info">Ya tengo cuenta</string>
+    <string name="signup_fragment_text_login">¡Iniciar Sesión!</string>
+    <style name="Base.Theme.DentalCare" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        <item name="colorPrimary">@color/green</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+
+        
+        <item name="android:statusBarColor">?attr/colorOnPrimary</item>
+        <item name="android:windowLightStatusBar" ns1:targetApi="23">true</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightNavigationBar" ns1:targetApi="o_mr1">true</item>
+    </style>
+    <style name="Theme.DentalCare" parent="Base.Theme.DentalCare"/>
+</resources>

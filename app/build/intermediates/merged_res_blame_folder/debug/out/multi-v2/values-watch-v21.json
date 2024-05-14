@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.carlosdevs.dentalcare.app-mergeDebugResources-54:/values-watch-v21/values-watch-v21.xml",
+            "map": [
+                {
+                    "source": "C:\\Users\\COMPAQ\\AndroidStudioProjects\\Calculator\\caches\\transforms-3\\c4a2e107f5003a8f4379f14a651178f4\\transformed\\appcompat-1.6.1\\res\\values-watch-v21\\values-watch-v21.xml",
+                    "from": {
+                        "startLines": "2,6,10",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,271,499",
+                        "endLines": "5,9,13",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "266,494,724"
+                    }
+                }
+            ]
+        }
+    ]
+}
