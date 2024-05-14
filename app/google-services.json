@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "256806011606",
+    "project_id": "dentalcare-4ed27",
+    "storage_bucket": "dentalcare-4ed27.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:256806011606:android:737db0ba74381fd2957f77",
+        "android_client_info": {
+          "package_name": "com.carlosdevs.dentalcare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnyvAMDmqRfXpt9tJhhpd0-6rsThq1sRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
