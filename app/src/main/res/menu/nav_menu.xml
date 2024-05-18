@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/nav_home"
+            android:title="Home"/>
+
+        <item
+            android:id="@+id/nav_usuario"
+            android:icon="@drawable/nav_user"
+            android:title="Usuario"/>
+
+        <item
+            android:id="@+id/nav_cita"
+            android:icon="@drawable/nav_cita"
+            android:title="Citas"/>
+
+        <item
+            android:id="@+id/nav_historialClinico"
+            android:icon="@drawable/nav_historial"
+            android:title="Historial Clínico"/>
+
+        <item
+            android:id="@+id/nav_pagos"
+            android:icon="@drawable/nav_pagos"
+            android:title="Pagos"/>
+
+        <item
+            android:id="@+id/nav_especialistas"
+            android:icon="@drawable/nav_especialistas"
+            android:title="Especialistas"/>
+
+        <item
+            android:id="@+id/nav_reportes"
+            android:icon="@drawable/nav_reportes"
+            android:title="Reportes"/>
+
+        <item
+            android:id="@+id/nav_cancelarCita"
+            android:icon="@drawable/nav_cancelar_cita"
+            android:title="Cancelar Cita"/>
+    </group>
+
+</menu>
