@@ -1,11 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.DentalCare" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.DentalCare" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/green</item>
         <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
-
 
         <!--Status bar color-->
         <item name="android:statusBarColor">?attr/colorOnPrimary</item>
@@ -15,4 +14,11 @@
     </style>
 
     <style name="Theme.DentalCare" parent="Base.Theme.DentalCare" />
+
+    <!--Barra de Navegación-->
+    <style name="Toolbar.White" parent="Widget.MaterialComponents.Toolbar">
+        <item name="background">@color/white</item>
+        <item name="titleTextColor">@color/black</item>
+    </style>
+
 </resources>
