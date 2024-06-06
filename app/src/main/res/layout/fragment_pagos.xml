@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,12 +8,11 @@
     tools:context=".UserFragment">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Pagos Fragment"
-        android:textSize="40sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="339dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Pagos"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:textColor="@color/green"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

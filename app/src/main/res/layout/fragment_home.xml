@@ -2,12 +2,287 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     tools:context=".HomeFragment">
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:layout_marginTop="20dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/card_citas"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="4"
+        tools:listitem="@layout/slider_imagenes"/>
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_citas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintEnd_toStartOf="@id/card_historial_clinico"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView">
+        
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:gravity="center">
+            
+            <ImageView
+                android:id="@+id/icon_citas"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="15dp"
+                android:src="@drawable/citas_logo"/>
+
+            <TextView
+                android:id="@+id/text_citas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Citas"
+                android:textSize="15dp"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:layout_below="@id/icon_citas"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"/>
+            
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_historial_clinico"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toEndOf="@id/card_citas"
+        app:layout_constraintEnd_toStartOf="@id/card_pagos"
+        app:layout_constraintTop_toTopOf="@id/card_citas">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon_historial_clinico"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="15dp"
+                android:src="@drawable/historialmedico_logo"/>
+
+            <TextView
+                android:id="@+id/text_historial_clinico"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Historial"
+                android:textSize="15dp"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:layout_below="@id/icon_historial_clinico"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_pagos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintStart_toEndOf="@id/card_historial_clinico"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/card_citas">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/icon_pagos"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="15dp"
+                android:src="@drawable/pago_logo"/>
+
+            <TextView
+                android:id="@+id/text_pagos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pagos"
+                android:textSize="15dp"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:layout_below="@id/icon_pagos"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_especialistas"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/card_citas"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:gravity="start">
+
+            <ImageView
+                android:id="@+id/icon_especialistas"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/especialistas_logo"/>
+
+            <TextView
+                android:id="@+id/text_especialistas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="8dp"
+                android:text="Especialistas"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/icon_card_arrow_one"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/card_arrow"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_reportes"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/card_especialistas"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:gravity="start">
+
+            <ImageView
+                android:id="@+id/icon_reportes"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/reportes_logo"/>
+
+            <TextView
+                android:id="@+id/text_reportes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="8dp"
+                android:text="Reportes"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/icon_card_arrow_two"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/card_arrow"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_cancelar_cita"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintTop_toBottomOf="@id/card_reportes"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:gravity="start">
+
+            <ImageView
+                android:id="@+id/icon_cancelar_cita"
+                android:layout_width="80dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="10dp"
+                android:src="@drawable/cancelarcita_logo"/>
+
+            <TextView
+                android:id="@+id/text_cancelar_cita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="8dp"
+                android:text="Cancelar Citas"
+                android:textAppearance="?attr/textAppearanceBody1"
+                android:textSize="20dp" />
+
+            <ImageView
+                android:id="@+id/icon_card_arrow_two_three"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/card_arrow"/>
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
