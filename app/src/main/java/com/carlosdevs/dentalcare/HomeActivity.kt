@@ -8,6 +8,8 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
+import android.os.VibrationEffect
+import android.os.Vibrator
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
@@ -22,10 +24,17 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var fragmentManager: FragmentManager
+    private lateinit var vibrator: Vibrator
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        /* Se llama a la función onBottomNavigation */
+        onBottomNavigation()
+
+        /* Se instancia la propiedad de vibrator */
+        vibrator = getSystemService(android.content.Context.VIBRATOR_SERVICE) as Vibrator
 
         /* Configurar el color de la barra de estado */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -48,11 +57,11 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         /* Se implementa la navegación del icono user dentro del toolbar */
         val toolbarUser = findViewById<ImageView>(R.id.toolbar_user)
         toolbarUser.setOnClickListener {
-            val userFragment = UserFragment()
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, userFragment)
-                .addToBackStack(null)  // Esto permite volver al fragment anterior con el botón de retroceso.
-                .commit()
+
+            // Vibrar al presionar el botón
+            vibrate()
+
+            openFragment(UserFragment())
         }
 
         /* Se instancia el bottomNavigationView (se inicia) */
@@ -76,26 +85,21 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             supportFragmentManager.beginTransaction().replace(R.id.fragment_container, HomeFragment()).commit()
             navigationView.setCheckedItem(R.id.nav_home)
         }
+    }
 
-        /* Se configura la navegación del bottomNavigationView (la barra inferior) */
+    /* Se configura la navegación del bottomNavigationView (la barra inferior) */
+    private fun onBottomNavigation() {
+        bottomNavigationView = findViewById(R.id.botton_navigation)
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
+
+            // Vibrar al presionar el botón
+            vibrate()
+
             when (menuItem.itemId) {
-                R.id.button_nav_home -> {
-                    fragmentManager = supportFragmentManager
-                    openFragment(HomeFragment())
-                }
-                R.id.button_nav_location -> {
-                    fragmentManager = supportFragmentManager
-                    openFragment(UbicationFragment())
-                }
-                R.id.button_nav_assitant -> {
-                    fragmentManager = supportFragmentManager
-                    openFragment(AsistenteVirtualFragment())
-                }
-                R.id.button_nav_phone -> {
-                    fragmentManager = supportFragmentManager
-                    openFragment(ContactoFragment())
-                }
+                R.id.button_nav_home -> openFragment(HomeFragment())
+                R.id.button_nav_location -> openFragment(UbicationFragment())
+                R.id.button_nav_assitant -> openFragment(AsistenteVirtualFragment())
+                R.id.button_nav_phone -> openFragment(ContactoFragment())
             }
             true  /* devuelve true para indicar que el evento se ha consumido */
         }
@@ -103,52 +107,21 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     /* Se configura la navegación del drawerLayout y Toolbar (la barra superior) */
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.nav_home -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, HomeFragment())
-                    .commit()
-            }
-            R.id.nav_usuario -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, UserFragment())
-                    .commit()
-            }
-            R.id.nav_cita -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, CitaFragment())
-                    .commit()
-            }
-            R.id.nav_historialClinico -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, HistorialClinicoFragment())
-                    .commit()
-            }
-            R.id.nav_pagos -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, PagosFragment())
-                    .commit()
-            }
-            R.id.nav_especialistas -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, EspecialistasFragment())
-                    .commit()
-            }
-            R.id.nav_reportes -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, ReportesFragment())
-                    .commit()
-            }
-            R.id.nav_cancelarCita -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, CancelarCitaFragment())
-                    .commit()
-            }
-            R.id.nav_logout -> {
-                Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
-            }
-        }
 
+        // Vibrar al presionar el botón
+        vibrate()
+
+        when (item.itemId) {
+            R.id.nav_home -> openFragment(HomeFragment())
+            R.id.nav_usuario -> openFragment(UserFragment())
+            R.id.nav_cita -> openFragment(CitaFragment())
+            R.id.nav_historialClinico -> openFragment(HistorialClinicoFragment())
+            R.id.nav_pagos -> openFragment(PagosFragment())
+            R.id.nav_especialistas -> openFragment(EspecialistasFragment())
+            R.id.nav_reportes -> openFragment(ReportesFragment())
+            R.id.nav_cancelarCita -> openFragment(CancelarCitaFragment())
+            R.id.nav_logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
+        }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true   /* devuelve true para indicar que el evento se ha consumido */
     }
@@ -162,10 +135,19 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    /* Reemplaza el contenido del contenedor de fragmentos con un nuevo fragmento.  */
+    /* Reemplaza el contenido del contenedor de fragmentos con un nuevo fragmento. */
     private fun openFragment(fragment: androidx.fragment.app.Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
         transaction.commit()
+    }
+
+    /* Función que almacena la lógica para la vibración */
+    private fun vibrate() {
+        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
+        } else {
+            vibrator.vibrate(50)
+        }
     }
 }
