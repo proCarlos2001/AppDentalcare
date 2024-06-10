@@ -8,17 +8,22 @@ import android.view.ViewGroup
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.carlosdevs.dentalcare.Adapter.RecyclerViewSliderImagenes
+import com.carlosdevs.dentalcare.Adapter.ImageAdapter
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 
 class HomeFragment : Fragment() {
 
     /* Se inicializan las variables a utilizar */
     private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: RecyclerViewSliderImagenes
+    private lateinit var adapter: ImageAdapter
     private lateinit var vibrator: Vibrator
+    private lateinit var firestore: FirebaseFirestore
+    private lateinit var exception: Exception
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,21 +33,12 @@ class HomeFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
         recyclerView = view.findViewById(R.id.recyclerView)
-
-        val imagenes = listOf(
-            R.drawable.image_one,
-            R.drawable.image_two,
-            R.drawable.image_three,
-            R.drawable.image_four,
-            R.drawable.image_five,
-            R.drawable.image_six
-        )
-        adapter = RecyclerViewSliderImagenes(imagenes)
-
         recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
-        recyclerView.adapter = adapter
 
         vibrator = requireActivity().getSystemService(android.content.Context.VIBRATOR_SERVICE) as Vibrator
+
+        firestore = FirebaseFirestore.getInstance()
+        loadImages()
 
         /* Se implementa la navegación de los botones desde el home */
         openFragmentHome(view, R.id.card_citas, CitaFragment())
@@ -55,6 +51,27 @@ class HomeFragment : Fragment() {
 
         return view
     }
+
+    private fun loadImages() {
+        firestore.collection("images").get()
+            .addOnSuccessListener { result ->
+                val images = mutableListOf<imageData>()
+                for (document in result) {
+                    val storageRef = FirebaseStorage.getInstance().getReferenceFromUrl(document.getString("url") ?: "")
+                    storageRef.downloadUrl.addOnSuccessListener { uri ->
+                        images.add(imageData(uri.toString()))
+                        // Una vez que todas las imágenes se han agregado, actualiza el adaptador
+                        if (images.size == result.size()) {
+                            adapter = ImageAdapter(images)
+                            recyclerView.adapter = adapter
+                        }
+                    }.addOnFailureListener {
+                        Toast.makeText(activity, "Error al cargar las imágenes: ${exception.message}", Toast.LENGTH_LONG).show()
+                    }
+                }
+            }
+    }
+
     /* Se crea una función para navegar a los fragmentos con la propiedad CardView */
     private fun openFragmentHome(view: View, buttonId: Int, fragment: Fragment) {
         val transactionHome = view.findViewById<CardView>(buttonId)
