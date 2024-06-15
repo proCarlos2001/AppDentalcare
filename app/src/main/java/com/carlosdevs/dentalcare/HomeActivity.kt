@@ -1,5 +1,7 @@
 package com.carlosdevs.dentalcare
 
+import android.content.Context
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -120,7 +122,20 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_especialistas -> openFragment(EspecialistasFragment())
             R.id.nav_reportes -> openFragment(ReportesFragment())
             R.id.nav_cancelarCita -> openFragment(CancelarCitaFragment())
-            R.id.nav_logout -> Toast.makeText(this, "Logout!", Toast.LENGTH_SHORT).show()
+            R.id.nav_logout -> {
+
+                // Eliminar el estado de la sesión
+                val sharedPref = getSharedPreferences("DentalCare", Context.MODE_PRIVATE)
+                with(sharedPref.edit()) {
+                    putBoolean("Sesión iniciada", false)
+                    apply()
+                }
+
+                // Redirigir al LoginActivity
+                val intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                finish() // Para que no se pueda volver a la pantalla de home con el botón "atrás"
+            }
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true   /* devuelve true para indicar que el evento se ha consumido */
@@ -138,7 +153,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     /* Reemplaza el contenido del contenedor de fragmentos con un nuevo fragmento. */
     private fun openFragment(fragment: androidx.fragment.app.Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.fragment_container, fragment)
+        transaction.replace(R.id.fragment_container, fragment).addToBackStack(null)
         transaction.commit()
     }
 
