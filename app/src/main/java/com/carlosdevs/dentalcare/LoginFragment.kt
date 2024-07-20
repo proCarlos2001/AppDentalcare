@@ -45,6 +45,7 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
         return view
     }
 
+    // Función que permite al usuario iniciar sesión
     private fun loginUser() {
 
         val email = binding.loginFragmentEmail.text.toString()

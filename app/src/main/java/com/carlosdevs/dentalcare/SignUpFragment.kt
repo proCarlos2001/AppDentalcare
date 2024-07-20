@@ -20,7 +20,7 @@ class SignUpFragment : Fragment(R.layout.fragment_signup) {
     private val TAG = "SignUpFragment"
     private lateinit var binding: FragmentSignupBinding
     private var gender : String = ""
-    private lateinit var auth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth  // Variable para manejar la autenticación en Firebase
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +29,7 @@ class SignUpFragment : Fragment(R.layout.fragment_signup) {
         binding = FragmentSignupBinding.inflate(inflater, container, false)
         val view = binding.root
 
-        auth = FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance() // Se establece la conexión con la base de datos
 
         binding.apply {
             binding.signupFragmentRadioGroup.setOnCheckedChangeListener { _, checkedId ->
@@ -51,6 +51,7 @@ class SignUpFragment : Fragment(R.layout.fragment_signup) {
         return view
     }
 
+    // Función que permite el registro de usuarios
     private fun createUser() {
         val email = binding.signupFragmentEmail.text.toString()
         val password = binding.signupFragmentPassword.text.toString()
@@ -61,6 +62,7 @@ class SignUpFragment : Fragment(R.layout.fragment_signup) {
             return
         }
 
+        // Se validan los datos ingresados y se añade el nuevo usuario a la base de datos
         FirebaseAuth.getInstance().createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -77,6 +79,7 @@ class SignUpFragment : Fragment(R.layout.fragment_signup) {
                         "gender" to gender
                     )
 
+                    // Se guardan los datos adicionales del usuario en una colección llamada users
                     val db = FirebaseFirestore.getInstance()
                     if (uid != null) {
                         db.collection("users").document(uid)

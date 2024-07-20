@@ -9,6 +9,7 @@ import android.os.VibrationEffect
 import android.os.Vibrator
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +23,7 @@ class HomeFragment : Fragment() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var adapter: ImageAdapter
     private lateinit var vibrator: Vibrator
-    private lateinit var firestore: FirebaseFirestore
+    private lateinit var firestore: FirebaseFirestore // Se inicializa la varible para la conexión con la bd
     private lateinit var exception: Exception
 
     override fun onCreateView(
@@ -32,11 +33,13 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
+        // Se instancia el recyclerView donde se mostraran las imángenes
         recyclerView = view.findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.HORIZONTAL, false)
 
         vibrator = requireActivity().getSystemService(android.content.Context.VIBRATOR_SERVICE) as Vibrator
 
+        // Se instancia la conexión con Firebase Firestore
         firestore = FirebaseFirestore.getInstance()
         loadImages()
 
@@ -49,9 +52,18 @@ class HomeFragment : Fragment() {
         openFragmentHome2(view, R.id.icon_card_arrow_two, ReportesFragment())
         openFragmentHome2(view, R.id.icon_card_arrow_two_three, CancelarCitaFragment())
 
+        // Manejo del botón de retroceso
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                // Salir de la aplicación
+                requireActivity().finish()
+            }
+        })
+
         return view
     }
 
+    // Función que permite cargar las imágenes desde Firebase a la app
     private fun loadImages() {
         firestore.collection("images").get()
             .addOnSuccessListener { result ->

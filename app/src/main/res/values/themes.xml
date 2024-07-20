@@ -20,5 +20,29 @@
         <item name="background">@color/white</item>
         <item name="titleTextColor">@color/black</item>
     </style>
+    
+    <!-- Estilo personalizado para el DatePickerDialog -->
+    <style name="CustomDatePickerDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#009E0F</item>
+        <item name="android:datePickerDialogTheme">@style/CustomDatePickerDialog</item>
+    </style>
+
+    <style name="CustomDatePicker" parent="android:Widget.Material.DatePicker">
+        <item name="android:headerBackground">?android:colorPrimary</item>
+        <item name="android:calendarTextColor">#009E0F</item>
+        <item name="android:yearListSelectorColor">#009E0F</item>
+    </style>
+
+    <!-- Estilo personalizado para el TimePickerDialog -->
+    <style name="CustomTimePickerDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorAccent">#009E0F</item>
+        <item name="android:timePickerDialogTheme">@style/CustomTimePickerDialog</item>
+    </style>
+
+    <style name="CustomTimePicker" parent="android:Widget.Material.TimePicker">
+        <item name="android:headerBackground">#009E0F</item>
+        <item name="android:numbersTextColor">#009E0F</item>
+        <item name="android:amPmTextColor">#009E0F</item>
+    </style>
 
 </resources>
