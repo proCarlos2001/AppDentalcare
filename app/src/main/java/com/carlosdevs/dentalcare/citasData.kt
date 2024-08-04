@@ -8,5 +8,6 @@ data class citasData(
     val fecha: String = "",
     val hora: String = "",
     val estado: String = "",
-    val fechaRegistro: String = ""
+    val fechaRegistro: String = "",
+    val userId: String = ""
 )

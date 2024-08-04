@@ -39,49 +39,48 @@ class CitaViewModel : ViewModel() {
 
     // Función para guardar una nueva cita en Firestore
     fun saveCita(citaData: citasData) {
-
-        // Variable que almacena la fecha actual
         val currentDate = LocalDateTime.now().format(DateTimeFormatter.ofPattern("d/M/yyyy"))
-
-        // Crea un mapa con los datos de la cita
-        val citaMap = hashMapOf(
-            "nombre" to citaData.nombre,
-            "correo" to citaData.correo,
-            "motivo" to citaData.motivo,
-            "fecha" to citaData.fecha,
-            "hora" to citaData.hora,
-            "estado" to citaData.estado,
-            "fechaRegistro" to currentDate
-        )
-        // Comprueba que el usuario esté autenticado
         val user = auth.currentUser
+
         if (user != null) {
+            val citaMap = hashMapOf(
+                "nombre" to citaData.nombre,
+                "correo" to citaData.correo,
+                "motivo" to citaData.motivo,
+                "fecha" to citaData.fecha,
+                "hora" to citaData.hora,
+                "estado" to citaData.estado,
+                "fechaRegistro" to currentDate,
+                "userId" to user.uid
+            )
+
             viewModelScope.launch(Dispatchers.IO) {
-                try{
+                try {
                     db.collection("citas")
                         .add(citaMap)
                         .await()
-                    // Mensaje por pantalla si la cita se guarda exitosamente
                     _saveCitaResult.postValue(Result.success("Cita guardada exitosamente"))
-
                 } catch (e: Exception) {
-                    // Mensaje de error si la cita no se guarda
                     _saveCitaResult.postValue(Result.failure(e))
                 }
             }
         } else {
-            // Mensaje de error si el sistema detecta que el usuario no esta autenticado
             _saveCitaResult.postValue(Result.failure(Exception("No hay un usuario autenticado")))
         }
     }
+
     // Función para obtener las citas desde Firestore
     fun fetchCitas() {
-        // Comprueba que el usuario esté autenticado
         val user = auth.currentUser
         if (user != null) {
             viewModelScope.launch(Dispatchers.IO) {
                 try {
-                    val result = db.collection("citas").get().await() // Obtiene las citas desde Firestore
+                    // Filtra las citas por el userId del usuario autenticado
+                    val result = db.collection("citas")
+                        .whereEqualTo("userId", user.uid)  // Filtra por el userId
+                        .get()
+                        .await()
+
                     val citasList = result.documents.mapNotNull { document ->
                         val cita = document.toObject(citasData::class.java)
                         cita?.let {
@@ -108,6 +107,7 @@ class CitaViewModel : ViewModel() {
             Log.w("Firestore", "No hay un usuario autenticado")
         }
     }
+
     // Función que determina el estado de una cita basada en la fecha y hora
     private fun getCitaEstado(fecha: String, hora: String): String {  // Parametros (Fecha y Hora)
         return try {
