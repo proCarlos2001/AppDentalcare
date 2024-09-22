@@ -10,12 +10,14 @@
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
+        android:id="@+id/header_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:src="@drawable/nav_user"
-        app:tint="@color/white" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/nav_user"/>
 
     <TextView
+        android:id="@+id/header_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="DentalCare"
@@ -23,6 +25,7 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/header_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"

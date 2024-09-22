@@ -13,11 +13,13 @@ import androidx.appcompat.widget.Toolbar
 import android.os.VibrationEffect
 import android.os.Vibrator
 import android.util.Log
+import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.FragmentManager
+import com.bumptech.glide.Glide
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
@@ -25,7 +27,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    /* Se definen las variables que se van a usar */
+    // Se definen las variables que se van a usar
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var fragmentManager: FragmentManager
@@ -51,7 +53,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         /* Configurar el color de la barra de navegación */
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
+            window.decorView.systemUiVisibility =
+                window.decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
             window.navigationBarColor = ContextCompat.getColor(this, R.color.white)
         }
 
@@ -81,7 +84,13 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         navigationView.setNavigationItemSelectedListener(this)
 
         /* Se inicia el drawerLayout y se cierra respectivamente */
-        val toggle = ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_nav, R.string.close_nav)
+        val toggle = ActionBarDrawerToggle(
+            this,
+            drawerLayout,
+            toolbar,
+            R.string.open_nav,
+            R.string.close_nav
+        )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -90,7 +99,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         /* Se devuelve del drawerLayout al Fragment home con el botón de retroceso */
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction().replace(R.id.fragment_container, HomeFragment()).commit()
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, HomeFragment()).commit()
             navigationView.setCheckedItem(R.id.nav_home)
         }
         // Recuperar la información del usuario
@@ -169,7 +179,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     /* Función que almacena la lógica para la vibración */
     private fun vibrate() {
-        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
             vibrator.vibrate(VibrationEffect.createOneShot(50, VibrationEffect.DEFAULT_AMPLITUDE))
         } else {
             vibrator.vibrate(50)
@@ -180,10 +190,14 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun getUserData(userId: String) {
         db.collection("users").document(userId).get()
             .addOnSuccessListener { document ->
-                if(document != null) {
+                if (document != null) {
                     val user = document.toObject(userData::class.java)
-                    if(user != null) {
+                    if (user != null) {
                         Log.d("HomeActivity", "User data retrieved: $user")
+
+                        // Actualizar la UI con la información del usuario
+                        updateHeader(user)
+                        updateImageToolbar(user)
                     }
                 } else {
                     Log.d("HomeActivity", "No such document")
@@ -192,5 +206,50 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             .addOnFailureListener { e ->
                 Log.d("HomeActivity", "Error getting user data", e)
             }
+    }
+    private fun updateHeader(user: userData) {
+        val navigationView: NavigationView = findViewById(R.id.nav_view)
+        val headerView = navigationView.getHeaderView(0)
+
+        val headerName = headerView.findViewById<TextView>(R.id.header_name)
+        val headerEmail = headerView.findViewById<TextView>(R.id.header_email)
+        val headerImage = headerView.findViewById<ImageView>(R.id.header_image)
+
+        // Obtener el correo electrónico del usuario desde FirebaseAuth
+        val userEmail = FirebaseAuth.getInstance().currentUser?.email
+
+        headerName.text = user.name
+        headerEmail.text = userEmail ?: "Email no disponible"
+
+        // Verificar la URL de la imagen
+        Log.d("updateHeader", "URL: ${user.photoUrl}")
+
+        // Cargar la imagen en NavHeader usando Glide
+        if (!user.photoUrl.isNullOrEmpty()) {
+            Glide.with(this)
+                .load(user.photoUrl)
+                .placeholder(R.drawable.nav_user) // Imagen por defecto mientras se carga
+                .error(R.drawable.nav_user) // Imagen por defecto en caso de error
+                .circleCrop() // Recortar en forma circular
+                .into(headerImage)
+        } else {
+            // Si no hay URL, usar imagen por defecto
+            headerImage.setImageResource(R.drawable.nav_user)
+        }
+    }
+    // Cargar la imagen en toolbar_user usando Glide
+    private fun updateImageToolbar(user: userData) {
+        val ToolbarImage: ImageView = findViewById(R.id.toolbar_user)
+
+        if (!user.photoUrl.isNullOrEmpty()) {
+            Glide.with(this)
+                .load(user.photoUrl)
+                .placeholder(R.drawable.nav_user)
+                .circleCrop()
+                .into(ToolbarImage)
+        } else {
+            // Si no hay URL, usar una imagen por defecto
+            ToolbarImage.setImageResource(R.drawable.nav_user)
+        }
     }
 }

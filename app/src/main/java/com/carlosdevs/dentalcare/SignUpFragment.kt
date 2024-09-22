@@ -17,7 +17,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 
 class SignUpFragment : Fragment(R.layout.fragment_signup) {
 
-    private val TAG = "SignUpFragment"
+    private val TAG = "Resgitro de Usuario"
     private lateinit var binding: FragmentSignupBinding
     private var gender : String = ""
     private lateinit var auth: FirebaseAuth  // Variable para manejar la autenticación en Firebase

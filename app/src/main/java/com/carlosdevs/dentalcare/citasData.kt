@@ -2,6 +2,7 @@ package com.carlosdevs.dentalcare
 
 // Definición de la clase de datos "citasData"
 data class citasData(
+    val idCita: String = "",
     val nombre: String = "",
     val correo: String = "",
     val motivo: String = "",

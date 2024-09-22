@@ -77,7 +77,7 @@ dependencies {
     implementation(composeBom)
     androidTestImplementation(composeBom)
 
-    implementation("androidx.compose.material:material")                   // MaterialDesign2
+    implementation("androidx.compose.material:material")                     // MaterialDesign2
     implementation("androidx.compose.ui:ui-tooling-preview")                 // Previsualizar composables
     debugImplementation("androidx.compose.ui:ui-tooling")                    // Funcionalidades avazadas de depuración
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")          // Realizar pruebas unitarias a tus composables
@@ -86,10 +86,12 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")   // Para usar ViewModels con Compose
     implementation("androidx.compose.runtime:runtime-livedata")              // Para integrar LiveData con Compose
     implementation("androidx.compose.runtime:runtime-rxjava2")               // Para integrar RxJava con Compose
+    implementation ("io.coil-kt:coil-compose:2.1.0")
+
 
     // Glide
-    implementation("com.github.bumptech.glide:glide:4.12.0")
-    annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
+    implementation("com.github.bumptech.glide:glide:4.15.1")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

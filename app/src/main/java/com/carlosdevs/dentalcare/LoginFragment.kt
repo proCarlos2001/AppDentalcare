@@ -108,7 +108,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     userId = userId,
                     name = existingData?.name ?: "",
                     number = existingData?.number ?: "",
-                    gender = existingData?.gender ?: ""
+                    gender = existingData?.gender ?: "",
+                    photoUrl = existingData?.photoUrl ?: ""
                 )
 
                 // Guardar los datos actualizados
@@ -125,7 +126,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                     userId = userId,
                     name = "",
                     number = "",
-                    gender = ""
+                    gender = "",
+                    photoUrl = ""
                 )
                 userDocRef.set(newData)
                     .addOnSuccessListener {

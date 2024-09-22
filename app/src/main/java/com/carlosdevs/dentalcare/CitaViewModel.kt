@@ -26,6 +26,9 @@ class CitaViewModel : ViewModel() {
     // Instancia de Firebase Authentication para la autenticación de usuarios
     private val auth = FirebaseAuth.getInstance()
 
+    private val _citaEliminada = MutableLiveData<Boolean>()
+    val citaEliminada: LiveData<Boolean> = _citaEliminada
+
     // LiveData para manejar el resultado de guardar una cita
     private val _saveCitaResult = MutableLiveData<Result<String>>()
     val saveCitaResult: LiveData<Result<String>> = _saveCitaResult
@@ -82,7 +85,7 @@ class CitaViewModel : ViewModel() {
                         .await()
 
                     val citasList = result.documents.mapNotNull { document ->
-                        val cita = document.toObject(citasData::class.java)
+                        val cita = document.toObject(citasData::class.java)?.copy(idCita = document.id) // Agregar el ID de la cita
                         cita?.let {
                             val estadoActualizado = getCitaEstado(it.fecha, it.hora)
                             val citaConEstado = it.copy(estado = estadoActualizado) // Guarda el estado actual de la cita
@@ -142,5 +145,30 @@ class CitaViewModel : ViewModel() {
             Log.e("CitaViewModel", "Error en el formato: ${e.message}")  // Log para hacer pruebas
             "Error en fecha"
         }
+    }
+    fun eliminarCita(idCita: String) {
+        val user = FirebaseAuth.getInstance().currentUser // Obtener el usuario autenticado
+
+        // Verificar si el usuario está autenticado
+        if (user != null) {
+            val db = FirebaseFirestore.getInstance()
+
+            db.collection("citas").document(idCita)
+                .delete()
+                .addOnSuccessListener {
+                    _citaEliminada.value = true // Notifica que la cita fue eliminada
+                }
+                .addOnFailureListener { exception ->
+                    _citaEliminada.value = false // Notifica que hubo un error
+                    Log.e("CitaViewModel", "Error al eliminar la cita", exception)
+                }
+        } else {
+            _citaEliminada.value = false // Notifica que el usuario no está autenticado
+            Log.e("CitaViewModel", "Usuario no autenticado")
+        }
+    }
+    // Función para resetear el estado si es necesario
+    fun resetCitaEliminada() {
+        _citaEliminada.value = null
     }
 }

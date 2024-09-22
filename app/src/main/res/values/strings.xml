@@ -22,6 +22,9 @@
     <!-- Menú Hamburguesa (lateral) -->
     <string name="name_nav">Barra de navegación</string>
     <string name="open_nav">Abrir barra de navegación</string>
-    <string name="close_nav"> Cerrar barra de navegación</string>
+    <string name="close_nav">Cerrar barra de navegación</string>
+
+    <!-- Mensaje de cancelacion de cita -->
+    <string name="text_info_cita">Por favor, tenga en cuenta que al eliminar su cita, esta será removida de nuestra base de datos de forma permanente y no podrá ser recuperada. Si lo desea, deberá programar una nueva cita.</string>
 
 </resources>
