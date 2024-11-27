@@ -10,5 +10,6 @@ data class citasData(
     val hora: String = "",
     val estado: String = "",
     val fechaRegistro: String = "",
-    val userId: String = ""
+    val userId: String = "",
+    var isPaid: Boolean = false
 )

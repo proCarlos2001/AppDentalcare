@@ -89,9 +89,17 @@ dependencies {
     implementation ("io.coil-kt:coil-compose:2.1.0")
 
 
+
+
     // Glide
     implementation("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
+
+    // Geminiai-1.5-pro
+    implementation("com.google.ai.client.generativeai:generativeai:0.7.0")
+
+    // Biblioteca para leer PDF
+    implementation("com.tom-roush:pdfbox-android:2.0.27.0")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
